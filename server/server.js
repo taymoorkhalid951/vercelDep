@@ -19,16 +19,18 @@ const app = express();
 app.use(express.static('public'));
 
 const server = createServer(app);
-const PORT = 8080;
-const HOST = '127.0.0.1';
+const PORT = process.env.PORT || 8080; // Use dynamic port provided by Vercel or default to 8080
 
-server.listen(PORT, HOST);
+server.listen(PORT, () => {
+  console.log(`Server listening on port ${PORT}`);
+});
+
 server.on('error', (e) => {
   if (e.code === 'EADDRINUSE') {
     console.error('Address in use, retrying...');
     setTimeout(() => {
-    server.close();
-    server.listen(PORT, HOST);
+      server.close();
+      server.listen(PORT);
     }, 1000);
   }
 });

@@ -15,8 +15,8 @@ let rec = 0;
 // import { stringify } from 'querystring';
 
 const app = express();
+app.use(express.static(path.join(__dirname, '../public')));
 
-app.use(express.static('public'));
 
 const server = createServer(app);
 const PORT = process.env.PORT || 8080; // Use dynamic port provided by Vercel or default to 8080

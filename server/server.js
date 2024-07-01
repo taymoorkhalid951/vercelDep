@@ -9,6 +9,14 @@ import ffmpeg from 'fluent-ffmpeg';
 import { PassThrough } from 'stream';
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+// Now you can use __dirname as before
+
 
 let rec = 0;
 

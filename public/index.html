@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Game</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="panel left-panel">
+    <h1 style="text-align: center;">Population</h1>
+    <div id="popDisplay"></div>
+  </div>
+  <div class="panel center-panel">
+    <div id="gameOverDisplay"></div>
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+    <div id="recordingDisplay"></div>
+  </div>
+  <div class="panel right-panel">
+    <div id="startGamePanel">
+      <h1 style="text-align: center;">Start Game</h1>
+      <table>
+        <tr>
+          <td><label for="pop0">Red</label></td>
+          <td>:</td>
+          <td><input type="number" id="pop0" name="pop0" min="1" max="70" value="10"></td>
+        </tr>
+        <tr>
+          <td><label for="pop1">Green</label></td>
+          <td>:</td>
+          <td><input type="number" id="pop1" name="pop1" min="1" max="70" value="10"></td>
+        </tr>
+        <tr>
+          <td><label for="pop2">Cyan</label></td>
+          <td>:</td>
+          <td><input type="number" id="pop2" name="pop2" min="1" max="70" value="10"></td>
+        </tr>
+      </table>
+      <button id="startButton"><strong>Start</strong></button>
+    </div>
+  </div>
+  <script src="dot.js" defer></script>
+  <script src="client.js" defer></script>
+</body>
+</html>

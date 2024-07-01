@@ -6,7 +6,8 @@ const gameOverDisplay = document.getElementById('gameOverDisplay');
 const startGamePanel = document.getElementById('startGamePanel');
 const recordingDisplay = document.getElementById('recordingDisplay');
 const protocol = window.location.protocol === 'https:' ? 'wss' : 'ws';
-const ws = new WebSocket(`${protocol}://${window.location.hostname}:${window.location.port}`);
+const ws = new WebSocket(`${protocol}://${window.location.host}`);
+
 
 
 ws.onmessage = function(event) {
